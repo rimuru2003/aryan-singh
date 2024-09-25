@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "LinkedIn AI Reply",
+    "version": "1.0",
+    "description": "A Chrome extension to assist with LinkedIn replies.",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup/index.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.linkedin.com/*"],
+        "js": ["content.js"],
+        "css": ["styles/tailwind.css"]
+      }
+    ],
+    "background": {
+"service_worker": "background.ts"    },
+    "icons": {
+      "48": "AIIcon.svg"
+    }
+  }
+  
